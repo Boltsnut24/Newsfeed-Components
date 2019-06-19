@@ -1,20 +1,14 @@
-class Menu {
-  constructor(menu){
-    this.menuOpen = menu.querySelector('.menu');
-    this.menuButton = menu.querySelector('.menu-button');
-    this.menuButton.addEventListener('click', () => this.toggleMenu());
-  }
-
-  toggleMenu(){
-    this.menu.classList.toggleAttribute('toggle-on');
-    // Toggle the "menu--open" class on your menu refence. 
-  }
-}
+const toggleMenu = () => {
+  // Toggle the "menu--open" class on your menu reference.
+  menu.classList.toggle('menu--open');
+};
 
 // Start Here: Create a reference to the ".menu" class
-const menus = document.querySelectorAll('.menu');
+const menu = document.querySelector('.menu');
 // create a reference to the ".menu-button" class
 const menuButton = document.querySelector('.menu-button');
-// Using your menuButton reference, add a click handler that calls toggleMenu
 
-menus.forEach(menu => new Menu (menu));
+menuButton.addEventListener('click', () => toggleMenu());
+// Using your menuButton reference, add a click handler that calls toggleMenu
+const allArticles = document.querySelector('.articles');
+allArticles.addEventListener('click', () => toggleMenu());
